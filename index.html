@@ -124,9 +124,34 @@
         },4000);
 
         document.addEventListener('mousemove', function(e){
-            document.getElementById('bee').style.left = (e.clientX + 10) + "px";
-            document.getElementById('bee').style.top = (e.clientY + 10) + "px";
+            let elem = document.getElementById('bee');
+            if(showBee){
+                elem.style.display = 'block';
+                elem.style.left = (e.clientX + 10) + "px";
+                elem.style.top = (e.clientY + 10) + "px";
+            }
+            else {
+                elem.style.display = 'none';
+            }
         })
+
+        let showBee = false;
+
+        document.addEventListener('keydown', function(e){
+            e = e || window.event;
+            if (e.key = 'escape') {
+                let elem = document.getElementById('bee');
+
+                if(showBee){
+                    showBee = false;
+                    elem.style.display = 'none';
+                }
+                else {
+                    showBee = true;
+                    elem.style.display = 'block';
+                }
+            }
+        });
     </script>
 </head>
 

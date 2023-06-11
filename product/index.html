@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <link href="https://www.tazeyore.com/" rel="canonical">
+    <link href="/" rel="canonical">
 
     <style>
         /* fallback */
@@ -24,7 +24,7 @@
             font-family: 'Material Symbols Outlined';
             font-style: normal;
             font-weight: 400;
-            src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v119/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1n-q_4MrImHCIJIZrDCvHOej.woff2) format('woff2');
+            src: url(https:/fonts.gstatic.com/s/materialsymbolsoutlined/v119/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1n-q_4MrImHCIJIZrDCvHOej.woff2) format('woff2');
         }
 
         .material-symbols-outlined {
@@ -85,6 +85,11 @@
             z-index: 9999999999999;
             width: 7vmin;
             height: 7vmin;
+            border: 1px solid #000;
+            border-radius: 50%;
+            -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
         }
 
         #sync1 .owl-item {
@@ -106,11 +111,6 @@
                 console.log(scroll);
             }
         },4000);
-
-        document.addEventListener('mousemove', function(e){
-            document.getElementById('bee').style.left = (e.clientX + 10) + "px";
-            document.getElementById('bee').style.top = (e.clientY + 10) + "px";
-        })
     </script>
 </head>
 
@@ -120,12 +120,12 @@
         <img src="/svg/whatsapp.svg" alt="">
     </div>
     
-    <form method="post" action="https://www.tazeyore.com/" id="form1">
+    <form method="post" action="/" id="form1">
         <header>
             <div class="center">
                 <div class="d-flex align-items-center" style="justify-content: space-between;">
                     <div class="logo">
-                        <a href="https://www.tazeyore.com/">
+                        <a href="/">
                             <img src="/img/logo.png" id="WebLogo" alt="Taze Yöre">
                         </a>
                     </div>
@@ -142,7 +142,7 @@
                         </div>
                         <div class="ustmenu patch1">
                             <div id="uye_login_yapmadi">
-                                <a class="ActionBtn" href="https://www.tazeyore.com/uye-girisi?returnUrl=/">Giriş Yap</a>
+                                <a class="ActionBtn" href="/uye-girisi?returnUrl=/">Giriş Yap</a>
                             </div>
                         </div>
 
@@ -153,8 +153,9 @@
                                 <span id="sepet_toplam_urun_sayisi">0</span>
                             </div>
                             <div id="mini_sepet" class="sepetim" style="display: none">
-                                <button type="button" class="sepet_close"><i
-                                        class="far fa-times-circle none"></i></button>
+                                <button type="button" class="sepet_close">
+                                    <i class="far fa-times-circle none"></i>
+                                </button>
                                 <div class="clr"></div>
                                 <div class="KatBorderHeader Main-Border  uye_girisyap color2">
 
@@ -185,7 +186,7 @@
                 </style>
                 <div class="center">
                     <div class="geri">
-                        <a href="https://www.tazeyore.com/u/ozlu-datca-yoresel-urunler-datca-ari-sutu-250-g#"
+                        <a href="/u/ozlu-datca-yoresel-urunler-datca-ari-sutu-250-g#"
                             onclick="history.go(-1);return false;" title="Geri"><i
                                 class="fas fa-arrow-left"></i>Geri</a>
                     </div>
@@ -256,6 +257,8 @@
                             </h1>
                             <hr>
 
+                            
+
                             <ul class="urun_genelbilgi">
 
                                 <li><span>Yöresi</span>: Muğla</li>
@@ -278,7 +281,7 @@
                                         class="material-symbols-outlined">
                                         storefront
                                     </span>
-                                    <a href="https://www.tazeyore.com/magaza/ozlu-datca-yoresel-urunler"
+                                    <a href="/magaza/ozlu-datca-yoresel-urunler"
                                         title="Mağazaya Git" style="float:left;margin-left:10px" class="a1">
                                         Özlü Datça Yöresel Ürünler
                                     </a>
@@ -351,13 +354,13 @@
                     <div class="clr"></div>
                     <ul class="tabs uruntabs Main-Border">
                         <li class="active"><a
-                                href="https://www.tazeyore.com/u/ozlu-datca-yoresel-urunler-datca-ari-sutu-250-g#urun_aciklamalari"
+                                href="/u/ozlu-datca-yoresel-urunler-datca-ari-sutu-250-g#urun_aciklamalari"
                                 class="LoadingClose">Açıklamalar</a>
                         </li>
 
 
 
-                        <li><a href="https://www.tazeyore.com/u/ozlu-datca-yoresel-urunler-datca-ari-sutu-250-g#kargo_ucretleri"
+                        <li><a href="/u/ozlu-datca-yoresel-urunler-datca-ari-sutu-250-g#kargo_ucretleri"
                                 class="LoadingClose">Kargo Kampanyası</a>
                         </li>
 
@@ -431,6 +434,36 @@
                                     olur.</p>
                             </div>
 
+                            <style>
+                                table {
+                                    width: 100%;
+                                    margin: 30px 0;
+                                }
+                                th, td {
+                                    border: 1px solid #888888;
+                                    padding: 8px;
+                                }
+                                th {
+                                    text-align: left;
+                                }
+                            </style>
+
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <td>Cell 1</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>Header 2</th>
+                                    <td>Cell 2</td>
+                                </tr>
+                                <tr>
+                                    <th>Header 3</th>
+                                    <td>Cell 3</td>
+                                </tr>
+                            </table>
+
                         </div>
                         <div id="urun_yorumlari" class="tabIcerigi urun_yorumlari" style="display: none;">
                             <div class="ortalama_urunpuani d-flex align-items-center">
@@ -475,7 +508,7 @@
                                 </div>
                                 <div class="dblock-md2">
                                     <a class="ActionBtn"
-                                        href="https://www.tazeyore.com/magaza/ozlu-datca-yoresel-urunler"
+                                        href="/magaza/ozlu-datca-yoresel-urunler"
                                         title="Mağazaya Git">Mağazaya Git</a>
                                 </div>
 
@@ -503,7 +536,7 @@
 
                         <li class="Main-Border" style="padding:1rem;">
 
-                            <a href="https://www.tazeyore.com/u/ozlu-datca-yoresel-urunler-datca-cicek-bali-1800-g"
+                            <a href="/u/ozlu-datca-yoresel-urunler-datca-cicek-bali-1800-g"
                                 title="Datça Çiçek Balı">
                                 <figure class="zoom_effect">
                                     <img src="./res/Ozlu-Datca-Yoresel-Urunler-Datca-Cicek-Bali-1800-g.jpg"
@@ -531,7 +564,7 @@
 
                         <li class="Main-Border" style="padding:1rem;">
 
-                            <a href="https://www.tazeyore.com/u/pervari-tat-bal-suzme-cicek-bali-850-g"
+                            <a href="/u/pervari-tat-bal-suzme-cicek-bali-850-g"
                                 title="Süzme Çiçek Balı">
                                 <figure class="zoom_effect">
                                     <img src="./res/Pervari-Tat-Bal-Suzme-Cicek-Bali-850-g.jpg"
@@ -559,7 +592,7 @@
 
                         <li class="Main-Border" style="padding:1rem;">
 
-                            <a href="https://www.tazeyore.com/u/sisters-and-a-princess-ham-cicek-bali-330-g"
+                            <a href="/u/sisters-and-a-princess-ham-cicek-bali-330-g"
                                 title="Ham Çiçek Balı">
                                 <figure class="zoom_effect">
                                     <img src="./res/Sisters-and-a-Princess-Ham-Çicek-Bali-330-g.jpg"
@@ -587,7 +620,7 @@
 
                         <li class="Main-Border" style="padding:1rem;">
 
-                            <a href="https://www.tazeyore.com/u/mustafa-baloglu-bal-urunleri-organik-ve-yoresel-urunler-karadeniz-kestane-bali-950-g"
+                            <a href="/u/mustafa-baloglu-bal-urunleri-organik-ve-yoresel-urunler-karadeniz-kestane-bali-950-g"
                                 title="Karadeniz Kestane Balı">
                                 <figure class="zoom_effect">
                                     <img src="./res/Mustafa-Baloğlu-Bal-Ürünleri--Organik-ve-Yöresel--Ürünler-Karadeniz-Kestane-Bali-950-g.jpg"
@@ -615,7 +648,7 @@
 
                         <li class="Main-Border" style="padding:1rem;">
 
-                            <a href="https://www.tazeyore.com/u/sisters-and-a-princess-ham-mese-bali-700-g"
+                            <a href="/u/sisters-and-a-princess-ham-mese-bali-700-g"
                                 title="Ham Meşe Balı">
                                 <figure class="zoom_effect">
                                     <img src="./res/Sisters-and-a-Princess-Ham-Mese-Bali-700-g.jpg"
@@ -659,58 +692,58 @@
                     <div class="footer_li">
                         <h6>Kurumsal</h6>
                         <ul class="margin_top20">
-                            <li><a href="https://www.tazeyore.com/i/hakkimizda" title="Hakkımızda"
+                            <li><a href="/i/hakkimizda" title="Hakkımızda"
                                     target="_self">Hakkımızda</a></li>
-                            <li><a href="https://www.tazeyore.com/i/kariyer-firsatlari" title="Kariyer Fırsatları"
+                            <li><a href="/i/kariyer-firsatlari" title="Kariyer Fırsatları"
                                     target="_self">Kariyer Fırsatları</a></li>
-                            <li><a href="https://www.tazeyore.com/i/kurumsal-bilgiler" title="Kurumsal Bilgiler"
+                            <li><a href="/i/kurumsal-bilgiler" title="Kurumsal Bilgiler"
                                     target="_self">Kurumsal Bilgiler</a></li>
-                            <li><a href="https://www.tazeyore.com/blog" title="Blog" target="_self">Blog</a></li>
-                            <li><a href="https://www.tazeyore.com/iletisim" title="İletişim" target="_self">İletişim</a>
+                            <li><a href="/blog" title="Blog" target="_self">Blog</a></li>
+                            <li><a href="/iletisim" title="İletişim" target="_self">İletişim</a>
                             </li>
                         </ul>
                     </div>
                     <div class="footer_li">
                         <h6>Müşteriler</h6>
                         <ul class="margin_top20">
-                            <li><a href="https://www.tazeyore.com/i/sikca-sorulan-sorular" title="Sıkça Sorulan Sorular"
+                            <li><a href="/i/sikca-sorulan-sorular" title="Sıkça Sorulan Sorular"
                                     target="_self">Sıkça Sorulan Sorular</a></li>
-                            <li><a href="https://www.tazeyore.com/i/garantili-odeme-modeli"
+                            <li><a href="/i/garantili-odeme-modeli"
                                     title="Garantili Ödeme Modeli" target="_self">Garantili Ödeme Modeli</a></li>
-                            <li><a href="https://www.tazeyore.com/i/iptal-ve-iade-politikasi"
+                            <li><a href="/i/iptal-ve-iade-politikasi"
                                     title="İptal ve İade Politikası" target="_self">İptal ve İade Politikası</a></li>
-                            <li><a href="https://www.tazeyore.com/i/islem-rehberi" title="İşlem Rehberi"
+                            <li><a href="/i/islem-rehberi" title="İşlem Rehberi"
                                     target="_self">İşlem Rehberi</a></li>
-                            <li><a href="https://www.tazeyore.com/i/gizlilik-politikasi-ve-kvkk-bildirimi"
+                            <li><a href="/i/gizlilik-politikasi-ve-kvkk-bildirimi"
                                     title="Gizlilik Politikası ve KVKK Bildirimi" target="_self">Gizlilik Politikası ve
                                     KVKK Bildirimi</a></li>
-                            <li><a href="https://www.tazeyore.com/i/kullanici-sozlesmesi" title="Kullanıcı Sözleşmesi"
+                            <li><a href="/i/kullanici-sozlesmesi" title="Kullanıcı Sözleşmesi"
                                     target="_self">Kullanıcı Sözleşmesi</a></li>
-                            <li><a href="https://www.tazeyore.com/i/on-bilgilendirme-formu"
+                            <li><a href="/i/on-bilgilendirme-formu"
                                     title="Ön Bilgilendirme Formu" target="_self">Ön Bilgilendirme Formu</a></li>
-                            <li><a href="https://www.tazeyore.com/i/mesafeli-satis-sozlesmesi"
+                            <li><a href="/i/mesafeli-satis-sozlesmesi"
                                     title="Mesafeli Satış Sözleşmesi" target="_self">Mesafeli Satış Sözleşmesi</a></li>
                         </ul>
                     </div>
                     <div class="footer_li">
                         <h6>Üreticiler</h6>
                         <ul class="margin_top20">
-                            <li><a href="https://www.tazeyore.com/i/taze-yorede-magaza-acmaya-uygun-musunuz"
+                            <li><a href="/i/taze-yorede-magaza-acmaya-uygun-musunuz"
                                     title="Taze Yöre" de="" mağaza="" açmaya="" uygun="" musunuz?'=""
                                     target="_self">Taze Yöre'de Mağaza Açmaya Uygun musunuz?</a></li>
-                            <li><a href="https://www.tazeyore.com/i/neden-taze-yorede-yer-almalisiniz"
+                            <li><a href="/i/neden-taze-yorede-yer-almalisiniz"
                                     title="Neden Taze Yöre’de Mağaza Açmalısınız?" target="_self">Neden Taze Yöre’de
                                     Mağaza Açmalısınız?</a></li>
-                            <li><a href="https://www.tazeyore.com/i/uretici-adaylarinin-sikca-sordugu-sorular"
+                            <li><a href="/i/uretici-adaylarinin-sikca-sordugu-sorular"
                                     title="Üretici Adaylarının Sıkça Sorduğu Sorular" target="_self">Üretici Adaylarının
                                     Sıkça Sorduğu Sorular</a></li>
-                            <li><a href="https://www.tazeyore.com/i/hangi-kategorilerde-satis-yapabilirsiniz"
+                            <li><a href="/i/hangi-kategorilerde-satis-yapabilirsiniz"
                                     title="Hangi Kategorilerde Satış Yapabilirsiniz?" target="_self">Hangi Kategorilerde
                                     Satış Yapabilirsiniz?</a></li>
-                            <li><a href="https://www.tazeyore.com/i/uretici-degerlendirme-sistemi"
+                            <li><a href="/i/uretici-degerlendirme-sistemi"
                                     title="Üretici Değerlendirme Sistemi" target="_self">Üretici Değerlendirme
                                     Sistemi</a></li>
-                            <li><a href="https://www.tazeyore.com/i/satici-Is-ortakligi-sozlesmesi"
+                            <li><a href="/i/satici-Is-ortakligi-sozlesmesi"
                                     title="Satıcı İş Ortaklığı Sözleşmesi" target="_self">Satıcı İş Ortaklığı
                                     Sözleşmesi</a></li>
                         </ul>
