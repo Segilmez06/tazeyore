@@ -1,0 +1,317 @@
+$(function () {
+	debugger;
+	var drp_kategori = $("#cb_drp_kategori");
+	var drp_urun_kategorisi = $("#cb_drp_urun_kategorisi");
+	var drp_urun = $("#cb_drp_urun");
+	var drp_urun_cesidi = $("#cb_drp_urun_cesidi");
+	var drp_yore = $("#cb_drp_yore");
+	var btn_ara = $("#btn_ara");
+	var afpId = 116;
+
+
+	var drp_kategori_val = parseInt($(drp_kategori).data("val"));
+	var drp_urun_kategorisi_val = parseInt($(drp_urun_kategorisi).data("val"));
+	var drp_urun_val = parseInt($(drp_urun).data("val"));
+	var drp_urun_cesidi_val = parseInt($(drp_urun_cesidi).data("val"));
+	var drp_yore_val = parseInt($(drp_yore).data("val"));
+
+
+	//swalAlert({
+	//	html: "Ödenmemiþ Kargo Borcunuz Bulunmakta",
+	//	icon: 'success',
+	//	buttonList: true,
+	//	//showCancelButton: true,
+	//	confirmButtonText: 'Hemen Öde',
+	//	//cancelButtonText: 'Alýþveriþe Devam Et',
+	//	customClass: {
+	//		confirmButton: 'btn-secondary',
+	//		//cancelButton: 'btn-primary',
+	//	}
+	//},
+	//	function (t) {
+	//		t.isConfirmed && (window.location = "/Odeme")
+	//	});
+
+	// DEFAULT DE?ERLER? Y?KLE
+	urun_kategorilerini_getir($("#ana_kat"), drp_kategori, drp_kategori_val, false,
+		function () {
+			if (!isNaN(drp_kategori_val) && drp_kategori_val > 0) {
+
+				urun_kategorilerini_getir(drp_kategori, drp_urun_kategorisi, drp_urun_kategorisi_val, false,
+					function () {
+
+						if (!isNaN(drp_urun_kategorisi_val) && drp_urun_kategorisi_val > 0) {
+
+							urun_kategorilerini_getir(drp_urun_kategorisi, drp_urun, drp_urun_val, false,
+								function () {
+
+									if (!isNaN(drp_urun_val) && drp_urun_val > 0) {
+										urun_kategorilerini_getir(drp_urun, drp_urun_cesidi, drp_urun_cesidi_val, false,
+											function () {
+
+												if (!isNaN(drp_yore_val) && drp_yore_val > 0) {
+													urun_cesitleri_getir(drp_yore_val, drp_urun_val, drp_urun_cesidi_val, false);
+												}
+
+											}, true, false, true);
+									}
+								}, true, true, true);
+						}
+					}, false, true);
+			}
+		}, false, true);
+
+	$(drp_kategori).on('change', function () {
+		debugger;
+		$(drp_urun_kategorisi).prop("disabled", true);
+		$(drp_urun).empty().append('<option value="">' + default_val(drp_urun) + '</option>').prop("disabled", true);
+		$(drp_urun_cesidi).empty().append('<option value="">' + default_val(drp_urun_cesidi) + '</option>').prop("disabled", true);
+		$(drp_yore).empty().append('<option value="">' + default_val(drp_yore) + '</option>').prop("disabled", true);
+		$(btn_ara).prop("disabled", false);
+
+		urun_kategorilerini_getir(drp_kategori, drp_urun_kategorisi, -1, true, null, false, true);
+	});
+
+	$(drp_urun_kategorisi).on('change', function () {
+		$(drp_urun).prop("disabled", true);
+		$(drp_urun_cesidi).empty().append('<option value="">' + default_val(drp_urun_cesidi) + '</option>').prop("disabled", true);
+		$(drp_yore).empty().append('<option value="">' + default_val(drp_yore) + '</option>').prop("disabled", true);
+		$(btn_ara).prop("disabled", false);
+
+		urun_kategorilerini_getir(drp_urun_kategorisi, drp_urun, -1, true, null, false, true);
+	});
+
+	$(drp_urun).on('change', function () {
+		$(drp_urun_cesidi).empty().append('<option value="">' + default_val(drp_urun_cesidi) + '</option>').prop("disabled", true);
+		$(drp_yore).empty().append('<option value="">' + default_val(drp_yore) + '</option>').prop("disabled", true);
+
+		urun_kategorilerini_getir(drp_urun, drp_urun_cesidi, -1, true, null, true, false);
+	});
+
+	$(drp_yore).on('change', function () {
+		urun_cesitleri_getir($(this).val(), drp_urun.val(), drp_yore_val, true);
+	});
+
+	function urun_kategorilerini_getir(gelenKategori, hedefKategori, selected_val, isLoading, fn_CompleteCallBack, getYoreler, getKategoriler, yoreSeciliGetir) {
+		if (gelenKategori.length > 0 && hedefKategori.length > 0) {
+
+			var def = default_val(hedefKategori);
+			$(hedefKategori).empty().append('<option value="">' + def + '</option>');
+
+			var gelenKategoriVal = parseInt($(gelenKategori).val());
+			if (!isNaN(gelenKategoriVal) && gelenKategoriVal > -1) {
+
+				if (hedefKategori.attr("id") == "cb_drp_urun") {
+					/*btn_ara.prop("disabled", false);*/
+				}
+
+				if (getKategoriler == true) {
+					hedefKategori.prop("disabled", false);
+				}
+
+				if (gelenKategoriVal == afpId) {
+					//$(btn_ara).prop("disabled", false);
+					getYoreler = true;
+				}
+
+				ajaxRequest("POST", "JSON", "/Handlers/ApiHandler.ashx", { cmd: 1, KatUstID: gelenKategoriVal }, isLoading,
+					function (data) {
+						if (typeof data.ErrorMessage !== 'undefined') { alert(data.ErrorMessage); return; }
+					
+						if (data.kategoriler.length > 0 && getKategoriler == true) {
+							var items = [];
+							for (var i = 0; i < data.kategoriler.length; i++) {
+								var val_selected = " ";
+								if (selected_val == parseInt(data.kategoriler[i].DataID)) {
+									val_selected = ' selected="selected" ';
+								}
+						
+								items.push('<option ' + val_selected + 'data-DataIdVal="' + data.kategoriler[i].DataIdVal +'"  value="' + data.kategoriler[i].DataID + '">' + data.kategoriler[i].DataValue + '</option>');
+							}
+
+							$(items.join("")).appendTo(hedefKategori);
+						}
+
+						if (getYoreler == true) {
+							yoreleri_getir(data.yoreler, drp_yore_val, yoreSeciliGetir);
+						}
+
+					}, function () {
+						if (fn_CompleteCallBack) {
+							fn_CompleteCallBack();
+						}
+					});
+
+				if (gelenKategoriVal == afpId) {
+					hedefKategori.prop("disabled", true);
+				}
+			}
+		}
+	}
+
+	function yoreleri_getir(data, selected_val, seciliGetir) {
+		$(drp_yore).empty().append('<option value="">' + default_val(drp_yore) + '</option>').prop("disabled", true);
+		if (data.length > 0) {
+			var items = [];
+			for (var i = 0; i < data.length; i++) {
+				var val_selected = " ";
+				if (seciliGetir == true && selected_val == parseInt(data[i].DataID)) {
+					val_selected = ' selected="selected" ';
+				}
+				items.push('<option ' + val_selected + ' value="' + data[i].DataID + '">' + data[i].DataValue + '</option>');
+			}
+
+			$(items.join("")).appendTo(drp_yore);
+
+			// ilk itemi se?
+			if ($(drp_yore).attr("data-firstselect") == "true") {
+				var sayi = parseInt($('#cb_drp_yore option').length);
+				var _selected = parseInt($('#cb_drp_yore option:selected').val());
+				if (sayi == 2 && isNaN(_selected)) {
+					$("select#cb_drp_yore").prop('selectedIndex', 1)
+				}
+			}
+		}
+		drp_yore.prop("disabled", false);
+	}
+
+	function yoreleri_getir_ajax(val) {
+
+		var val = parseInt(val);
+		if (!isNaN(val) && val > -1) {
+
+			ajaxRequest("POST", "JSON", "/Handlers/ApiHandler.ashx", { "cmd": 2, "KatID": val, "refreshx": new Date().getTime() }, false,
+				function (data) {
+					if (typeof data.ErrorMessage !== 'undefined') { alert(data.ErrorMessage); return; }
+					yoreleri_getir(data, drp_yore_val);
+				});
+
+		}
+	}
+
+	function urun_cesitleri_getir(YoreID, KatUstID, selected_val, isLoading) {
+
+		$(drp_urun_cesidi).empty().append('<option value="">' + default_val(drp_urun_cesidi) + '</option>').prop("disabled", true);
+
+		YoreID = parseInt(YoreID);
+		KatUstID = parseInt(KatUstID);
+
+		if (!isNaN(YoreID) && YoreID > 0 && !isNaN(KatUstID) && KatUstID > 0) {
+
+			ajaxRequest("POST", "JSON", "/Handlers/ApiHandler.ashx", { "cmd": 1, "YoreID": YoreID, "KatUstID": KatUstID, "refreshx": new Date().getTime() }, isLoading,
+				function (data) {
+					if (typeof data.ErrorMessage !== 'undefined') { alert(data.ErrorMessage); return; }
+
+					if (data.kategoriler.length > 0) {
+						var items = [];
+						for (var i = 0; i < data.kategoriler.length; i++) {
+							var val_selected = " ";
+							if (selected_val == parseInt(data.kategoriler[i].DataID)) {
+								val_selected = ' selected="selected" ';
+							}
+							
+							items.push('<option ' + val_selected + ' value="' + data.kategoriler[i].DataID + '">' + data.kategoriler[i].DataValue + '</option>');
+						}
+
+						$(items.join("")).appendTo(drp_urun_cesidi);
+					}
+
+				});
+
+			drp_urun_cesidi.prop("disabled", false);
+		}
+	}
+
+	$("#btn_ara").on('click', function (event) {
+		event.preventDefault();
+		if (drp_urun_cesidi.val() == '' && drp_yore.val()=='') {
+			if (drp_urun.val() != '') {
+				window.location.href = '/k/' + drp_urun[0].selectedOptions[0].dataset.dataidval;
+				return;
+			}
+			if (drp_urun_kategorisi.val() != '') {
+				window.location.href = '/k/' + drp_urun_kategorisi[0].selectedOptions[0].dataset.dataidval;
+				return;
+			}
+			if (drp_kategori.val() != '') {
+				window.location.href = '/k/' + drp_kategori[0].selectedOptions[0].dataset.dataidval;
+				return;
+			}
+		}
+		
+		var redirectUrl = $(this).data("url");
+		if (redirectUrl) {
+			var required = $(this).data("required");
+		
+			
+			var Kategori = parseInt(drp_kategori.val());
+			var KategoriUrl = drp_kategori[0].selectedOptions[0].dataset.dataidval;
+			console.log(KategoriUrl);
+
+			if (Kategori > 0) {
+				redirectUrl = updateQueryStr("Kategori", KategoriUrl, null, redirectUrl);
+			}
+			else if (required) {
+				drp_kategori.addClass("error").css('border-color', '#dc3545');
+				scrollTop(drp_kategori);
+				return false;
+			}
+
+			if (Kategori == afpId) {
+				required = false;
+			}
+
+			var UrunKategorisi = parseInt(drp_urun_kategorisi.val());
+			if (UrunKategorisi > 0) {
+				redirectUrl = updateQueryStr("UrunKategorisi", UrunKategorisi, null, redirectUrl);
+			}
+			else if (required) {
+				drp_urun_kategorisi.addClass("error").css('border-color', '#dc3545');
+				scrollTop(drp_urun_kategorisi);
+				//return false;
+			}
+
+			var Urun = parseInt(drp_urun.val());
+			redirectUrl = updateQueryStr("Urun", Urun, null, redirectUrl);
+			//if (Urun > 0) {
+			//}
+
+			var UrunCesidi = parseInt(drp_urun_cesidi.val());
+			if (UrunCesidi > 0) {
+				redirectUrl = updateQueryStr("UrunCesidi", UrunCesidi, null, redirectUrl);
+			}
+
+			var Yore = parseInt(drp_yore.val());
+			if (Yore > 0) {
+				redirectUrl = updateQueryStr("Yore", Yore, null, redirectUrl);
+			}
+
+			window.location.href = redirectUrl;
+			return false;
+		}
+	});
+
+	function default_val(hedefKategori) {
+		var def_ = $(hedefKategori).data("default");
+		if (!def_) {
+			def_ = "Se?iniz";
+		}
+
+		return def_;
+	}
+
+	$(".slider").owlCarousel({
+		autoPlay: 4000,
+		stopOnHover: true,
+		navigation: false,
+		pagination: true,
+		paginationSpeed: 1000,
+		goToFirstSpeed: 2000,
+		singleItem: true,
+		autoHeight: true,
+		navigationText: [
+			"<i class='fa fa-angle-left'></i>",
+			"<i class='fa fa-angle-right'></i>"
+		]
+	});
+});

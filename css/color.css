@@ -1,0 +1,58 @@
+.text-primary { color: #4d2004 !important; }
+.text-secondary { color: black !important; }
+.text-success { color: #8abb40 !important; }
+.text-danger { color: #d03227 !important; }
+.text-info { color: #17a2b8 !important; }
+.text-warning { color: #ffc107 !important; }
+.text-dark { color: #343a40 !important; }
+
+.bg-primary { background-color: #4d2004 !important; }
+.bg-secondary { background-color: #26613c !important; }
+.bg-success { background-color: #8abb40 !important; }
+.bg-info { background-color: #17a2b8 !important; }
+.bg-warning { background-color: #ffc107 !important; }
+.bg-danger { background-color: #d03227 !important; }
+.bg-dark { background-color: #343a40 !important; color: #fff !important; }
+.bg-secondary2 { background-color: #e8e8e8; }
+
+.btn-primary { background-color: #4d2004 !important;  }
+.btn-outline-primary { border-color: #4d2004 !important; }
+	.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active { background-color: #4d2004 !important; color: #fff !important; border-color: transparent !important; box-shadow: none !important; }
+
+.btn-secondary { background-color: #26613c !important; border-color: #26613c !important; }
+.btn-outline-secondary { border-color: #26613c !important; color: #26613c !important; }
+	.btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active, .btn-outline-secondary.active { background-color: #26613c !important; color: #fff !important; border-color: transparent !important; box-shadow: none !important; }
+
+.btn-success { background-color: #8abb40 !important; border-color: #8abb40 !important; }
+.btn-outline-success { border-color: #8abb40 !important; color: #8abb40 !important; }
+	.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active { background-color: #8abb40 !important; color: #fff !important; border-color: transparent !important; box-shadow: none !important; }
+
+.btn-info { background-color: #17a2b8 !important; border-color: #17a2b8 !important; }
+.btn-outline-info { border-color: #17a2b8 !important; color: #17a2b8 !important; }
+	.btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info.active { background-color: #17a2b8 !important; color: #fff !important; border-color: transparent !important; box-shadow: none !important; }
+
+.btn-warning { background-color: #ffc107 !important; border-color: #ffc107 !important; }
+.btn-outline-warning { border-color: #ffc107 !important; color: #ffc107 !important; }
+	.btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active, .btn-outline-warning.active { background-color: #ffc107 !important; color: #fff !important; border-color: transparent !important; box-shadow: none !important; }
+
+.btn-danger { background-color: #d03227 !important; border-color: #d03227 !important; color: #fff !important; }
+.btn-outline-danger { border-color: #d03227 !important; color: #d03227 !important; }
+	.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.active { background-color: #d03227 !important; color: #fff !important; border-color: transparent !important; box-shadow: none !important; }
+
+.btn-dark { background-color: #343a40 !important; border-color: #343a40 !important; }
+.btn-outline-dark { border-color: #343a40 !important; color: #343a40 !important; }
+	.btn-outline-dark:hover, .btn-outline-dark:focus, .btn-outline-dark:active, .btn-outline-dark.active { background-color: #343a40 !important; color: #fff !important; border-color: transparent !important; box-shadow: none !important; }
+
+.badge-primary { background-color: #4d2004 !important; }
+.badge-secondary { background-color: #26613c !important; }
+.badge-success { background-color: #8abb40 !important; }
+.badge-info { background-color: #17a2b8 !important; }
+.badge-warning { background-color: #ffc107 !important; }
+.badge-danger { background-color: #d03227 !important; }
+.badge-dark { background-color: #343a40 !important; }
+
+.text-muted { color: #b5b0ab !important; }
+
+.swal2-popup { border-radius: 0 !important }
+.swal2-icon.swal2-error { color: #d03227 !important; border-color: #d03227 !important; }
+	.swal2-icon.swal2-error [class^=swal2-x-mark-line] { background-color: #d03227 !important; }

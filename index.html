@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style data-merge-styles="true"></style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+    <title>Taze Yöre</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/plugins.css">
+    <link rel="stylesheet" href="/css/color.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link href="https://www.tazeyore.com/" rel="canonical">
+
+    <style>
+        /* fallback */
+        @font-face {
+            font-family: 'Material Symbols Outlined';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v119/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1n-q_4MrImHCIJIZrDCvHOej.woff2) format('woff2');
+        }
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .patch1{
+            display: flex;
+            align-items: center;
+            margin: 0 1vw;
+        }
+        
+        .owl-item {
+            width: 100vw !important;
+        }
+
+        #bee {
+            width: 6vmin;
+            height: 6vmin;
+            
+            border-radius: 50%;
+
+            position: fixed;
+            left: var(--clientX);
+            top: var(--clientY);
+            z-index: 9999999999999;
+
+            transition: all 0.25s linear;
+        }
+
+        #bee > img {
+            width: 100%;
+            height: 100%;
+
+            mix-blend-mode: multiply;
+        }
+
+        .nav-container {
+            margin: auto;
+        }
+
+        .nav-link {
+            margin: 2vmin;
+        }
+
+        .contact-icon {
+            position: fixed;
+            bottom: 5vmin;
+            right: 5vmin;
+            z-index: 9999999999999;
+            width: 7vmin;
+            height: 7vmin;
+            border: 1px solid #000;
+            border-radius: 50%;
+            -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+            box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+        }
+
+        footer .fmenu {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .footer_li > h6 {
+            font-size: 4vh;
+            text-decoration: underline;
+        }
+
+    </style>
+    <script>
+        let scroll = -1;
+        let scrollEnabled = true;
+        setInterval(function(){
+            if(scrollEnabled){
+                if(scroll < 3){
+                    scroll += 1;
+                }
+                else {
+                    scroll = 0;
+                }
+                document.getElementById('slideshow').style.transform = 'translate3d(calc(' + scroll + '*-100vw), 0px, 0px)';
+                console.log(scroll);
+            }
+        },4000);
+
+        document.addEventListener('mousemove', function(e){
+            document.getElementById('bee').style.left = (e.clientX + 10) + "px";
+            document.getElementById('bee').style.top = (e.clientY + 10) + "px";
+        })
+    </script>
+</head>
+
+<body id="body" class="e-ticaret" data-new-gr-c-s-check-loaded="14.1030.0" data-gr-ext-installed="">
+    <div id="bee">
+        <img src="/img/bee.gif" alt="bee">
+    </div>
+
+    <div class="contact-icon">
+        <img src="/svg/whatsapp.svg" alt="">
+    </div>
+    
+    <form method="post" action="https://www.tazeyore.com/" id="form1">
+        <header>
+            <div class="center">
+                <div class="d-flex align-items-center" style="justify-content: space-between;">
+                    <div class="logo">
+                        <a href="https://www.tazeyore.com/">
+                            <img src="/img/logo.png" id="WebLogo" alt="Taze Yöre">
+                        </a>
+                    </div>
+                    <div class="nav-container">
+                        <a href="" class="nav-link">Ürünler</a>
+                        <a href="" class="nav-link">Hakkımızda</a>
+                        <a href="" class="nav-link">İletişim</a>
+
+                    </div>
+                    <div class="headefr_right d-flex align-items-center">
+                        <!-- <div class="arama search-open patch1">
+                            <span class="material-symbols-outlined">search
+                            </span>
+
+                        </div> -->
+                        <div class="ustmenu patch1">
+                            <div id="uye_login_yapmadi">
+                                <a class="ActionBtn" href="https://www.tazeyore.com/uye-girisi?returnUrl=/">Giriş Yap</a>
+
+                            </div>
+                        </div>
+
+                        <div id="pnl_sepet" class="mini_sepet sepet bos patch1" data-show="csounter">
+                            <div class="btn_sepet">
+                                <span class="material-symbols-outlined">shopping_cart
+                                </span>
+                                <span id="sepet_toplam_urun_sayisi">0</span>
+                            </div>
+                            <div id="mini_sepet" class="sepetim" style="display: none">
+                                <button type="button" class="sepet_close"><i
+                                        class="far fa-times-circle none"></i></button>
+                                <div class="clr"></div>
+                                <div class="KatBorderHeader Main-Border  uye_girisyap color2">
+
+                                    <h6><b>Sepetim (<span id="sepetUrunSayisi">0</span> ürün) </b></h6>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <button type="button" class="navbar-toggle"><span class="bar1"></span><span
+                                class="bar2"></span><span class="bar3"></span></button>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- <header class="header">
+            <a class="home-link" href="/">
+                <img src="/img/logo.png" alt="">
+            </a>
+            <div class="nav-bar">
+                <a href="/" class="nav-item">Ürünler</a>
+                <a href="/" class="nav-item">Hakkımızda</a>
+                <a href="/" class="nav-item">İletişim</a>
+            </div>
+            <div class="account-controls">
+                <a href="/" class="account-control login-button">Giriş Yap</a>
+                <a href="/" class="account-control cart-button"><span class="material-symbols-outlined">shopping_cart</span></a>
+            </div>
+        </header> -->
+
+
+        <div role="main" id="main">
+            <section class="contents">
+
+                <div class="banner-container">
+                    <div class="banner">
+                        <div class="banner-text">
+                            <h1 class="banner-title">Taze Yöre</h1>
+                            <p class="banner-description">Taze Yöre, doğal ve taze ürünleri sizlere ulaştırıyor.</p>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Ne aramıştınız?">
+                            <button class="search-button"><span class="material-symbols-outlined">search</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div style="width: 100%; height: 10vh;"></div>
+
+                <div class="center AirCenterDiv">
+                    <div class="AirSharchConteiner" role="search" data-testid="little-search"
+                        aria-labelledby="littleSearchLabel">
+
+                        <div class="AirSharchDiv">
+                            <input type="hidden" name="ana_kat" id="ana_kat" value="0">
+                            <select name="drp_kategori" id="cb_drp_kategori"
+                                class="AirSharchDropDown validate[required]" data-default="Ana Kategori Seçiniz *">
+                                <option value="">Ana Kategori Seçiniz *</option>
+                                <option data-dataidval="peynir-tereyagi-sut-urunleri" value="85">Peynir - Tereyağı - Süt
+                                    Ürünleri</option>
+                                <option data-dataidval="zeytin-zeytinyagi" value="84">Zeytin - Zeytinyağı</option>
+                                <option data-dataidval="sarkuteri-et-balik-yoresel-yemekler" value="99">Şarküteri - Et -
+                                    Balık - Yöresel Yemekler</option>
+                                <option data-dataidval="bal-recel-marmelat-tahin-pekmez" value="2">Bal - Reçel -
+                                    Marmelat - Tahin - Pekmez</option>
+                                <option data-dataidval="sebze-meyve-konserve-salamura" value="1">Sebze - Meyve -
+                                    Konserve - Salamura</option>
+                                <option data-dataidval="bakliyat-un-kuruyemis-baharat-kuru-meyve-sebze" value="4">
+                                    Bakliyat - Un - Kuruyemiş - Baharat - Kuru Meyve Sebze</option>
+                                <option data-dataidval="tursu-salca-sirke-soslar-ezmeler-yaglar" value="113">Turşu -
+                                    Salça - Sirke - Soslar - Ezmeler - Yağlar</option>
+                                <option data-dataidval="unlu-mamuller-tatlilar-pestil-kome-sucuk-komposto" value="114">
+                                    Unlu Mamüller - Tatlılar - Pestil - Köme (Sucuk) - Komposto</option>
+                                <option data-dataidval="yoresel-icecekler-caylar-kahveler" value="115">Yöresel İçecekler
+                                    - Çaylar - Kahveler</option>
+                                <option data-dataidval="avantajli-karma-paketler-kargo-dahil" value="116">Avantajlı
+                                    Karma Paketler (Kargo Dahil)</option>
+                            </select>
+                        </div>
+                        <span class="AirSharchSpan"></span>
+
+                        <div class="AirSharchDiv">
+                            <select name="drp_urun_kategorisi" id="cb_drp_urun_kategorisi"
+                                class="AirSharchDropDown validate[required]" data-default="Ürün Kategorisi Seçiniz *"
+                                disabled="">
+                                <option selected="selected" value="">Ürün Kategorisi Seçiniz *</option>
+                            </select>
+                        </div>
+                        <span class="AirSharchSpan"></span>
+
+                        <div class="AirSharchDiv">
+                            <select name="drp_urun" id="cb_drp_urun" class="AirSharchDropDown"
+                                data-default="Ürün Seçiniz" disabled="">
+                                <option selected="selected" value="">Ürün Seçiniz</option>
+                            </select>
+                        </div>
+                        <span class="AirSharchSpan"></span>
+                        <div class="AirSharchDiv">
+                            <select name="drp_yore" id="cb_drp_yore" class="AirSharchDropDown"
+                                data-default="Tüm Yöreler" disabled="" data-firstselect="true">
+                                <option selected="selected" value="">Tüm Yöreler</option>
+                            </select>
+                        </div>
+
+
+                        <div class="AirBtnDiv">
+                            <button class="AirSharchBtn" disabled="" id="btn_ara" data-url="/urunler"
+                                data-required="true" type="button">
+                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="presentation" focusable="false"
+                                    style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                                    <g fill="none">
+                                        <path
+                                            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9">
+                                        </path>
+                                    </g>
+                                </svg></button>
+
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="caption_arama" style="display: none">
+                    <div class="form">
+                        <div class="satir">
+                            <label class="col4 control_label4 w100-md2">Neye İhtiyacınız Var ?</label>
+                            <div class="col8 w100-md2 satir_margin">
+
+
+                            </div>
+                        </div>
+                        <div class="satir">
+                            <label class="col4 control_label4 w100-md2 hidden-md2">&nbsp;</label>
+                            <div class="col8 w100-md2 satir_margin">
+
+                            </div>
+                        </div>
+                        <div class="satir">
+                            <label class="col4 control_label4 w100-md2 hidden-md2">&nbsp;</label>
+                            <div class="col8 w100-md2 satir_margin">
+
+                            </div>
+                        </div>
+                        <div class="satir none" style="display: none">
+                            <label class="col4 control_label4 w100-md2 hidden-md2">&nbsp;</label>
+                            <div class="col8 w100-md2 satir_margin">
+                                <select name="drp_urun_cesidi" id="cb_drp_urun_cesidi" class="text"
+                                    data-default="Ürün Çeşidi Seçiniz" disabled="">
+                                    <option selected="selected" value="">Ürün Çeşidi Seçiniz</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="satir">
+                            <label class="col4 control_label4 w100-md2 satir_margin">Hangi Yöremizden ?</label>
+                            <div class="col8 w100-md2 satir_margin">
+
+                            </div>
+                        </div>
+                        <div class="margin_top20">
+                            <div class="satir">
+                                <label class="col4 control_label4 w100-md2 hidden-md2">&nbsp;</label>
+                                <div class="col8 w100-md2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="centerSharchHeaderDefault  uye_girisyap color2">
+                    <h6>
+                        <b>Ürün Kategorileri</b>
+                    </h6>
+                </div>
+                <div class="center" style="margin-top: 2rem;">
+                    <ul class="anasayfa_kategoriler after_clr">
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/peynir-tereyagi-sut-urunleri"
+                                title="Peynir - Tereyağı - Süt Ürünleri">
+                                <h4>Süt Ürünleri</h4>
+                                <img src="/img/food/milk.jpg" alt="Peynir - Tereyağı - Süt Ürünleri"
+                                    class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/zeytin-zeytinyagi" title="Zeytin - Zeytinyağı">
+                                <h4>Zeytin - Zeytinyağı</h4>
+                                <img src="/img/food/olive.jpg" alt="Zeytin - Zeytinyağı" class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/sarkuteri-et-balik-yoresel-yemekler"
+                                title="Şarküteri - Et - Balık - Yöresel Yemekler">
+                                <h4>Et</h4>
+                                <img src="/img/food/beef.jpg"
+                                    alt="Şarküteri - Et - Balık - Yöresel Yemekler" class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/sarkuteri-et-balik-yoresel-yemekler"
+                                title="Şarküteri - Et - Balık - Yöresel Yemekler">
+                                <h4>Balık</h4>
+                                <img src="/img/food/fish.jpg"
+                                    alt="Şarküteri - Et - Balık - Yöresel Yemekler" class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/sarkuteri-et-balik-yoresel-yemekler"
+                                title="Şarküteri - Et - Balık - Yöresel Yemekler">
+                                <h4>Yöresel Yemekler</h4>
+                                <img src="/img/food/cultural.jpg"
+                                    alt="Şarküteri - Et - Balık - Yöresel Yemekler" class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/bal-recel-marmelat-tahin-pekmez"
+                                title="Bal - Reçel - Marmelat - Tahin - Pekmez">
+                                <h4>Bal - Reçel - Marmelat - Tahin - Pekmez</h4>
+                                <img src="/img/food/honey.jpg" alt="Bal - Reçel - Marmelat - Tahin - Pekmez"
+                                    class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/sebze-meyve-konserve-salamura"
+                                title="Sebze - Meyve - Konserve - Salamura">
+                                <h4>Sebze - Meyve - Konserve - Salamura</h4>
+                                <img src="/img/food/vegetable.jpg" alt="Sebze - Meyve - Konserve - Salamura"
+                                    class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/bakliyat-un-kuruyemis-baharat-kuru-meyve-sebze"
+                                title="Bakliyat - Un - Kuruyemiş - Baharat - Kuru Meyve Sebze">
+                                <h4>Bakliyat</h4>
+                                <img src="/img/kuru-gida-baharat.jpg"
+                                    alt="Bakliyat - Un - Kuruyemiş - Baharat - Kuru Meyve Sebze" class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/tursu-salca-sirke-soslar-ezmeler-yaglar"
+                                title="Turşu - Salça - Sirke - Soslar - Ezmeler - Yağlar">
+                                <h4>Sirke - Soslar - Yağlar</h4>
+                                <img src="/img/food/sirke.jpg"
+                                    alt="Turşu - Salça - Sirke - Soslar - Ezmeler - Yağlar" class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/tursu-salca-sirke-soslar-ezmeler-yaglar"
+                                title="Turşu - Salça - Sirke - Soslar - Ezmeler - Yağlar">
+                                <h4>Turşu - Salça - Ezmeler</h4>
+                                <img src="/img/tursu-salca-soslar.jpg"
+                                    alt="Turşu - Salça - Sirke - Soslar - Ezmeler - Yağlar" class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/unlu-mamuller-tatlilar-pestil-kome-sucuk-komposto"
+                                title="Unlu Mamüller - Tatlılar - Pestil - Köme (Sucuk) - Komposto">
+                                <h4>Unlu Mamüller - Tatlılar - Pestil - Köme (Sucuk) - Komposto</h4>
+                                <img src="/img/unlu-mamuller-tatlilar.jpg"
+                                    alt="Unlu Mamüller - Tatlılar - Pestil - Köme (Sucuk) - Komposto"
+                                    class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/yoresel-icecekler-caylar-kahveler"
+                                title="Yöresel İçecekler - Çaylar - Kahveler">
+                                <h4>Yöresel İçecekler - Çaylar - Kahveler</h4>
+                                <img src="/img/yoresel-icecekler.jpg" alt="Yöresel İçecekler - Çaylar - Kahveler"
+                                    class="list_img none">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tazeyore.com/k/avantajli-karma-paketler-kargo-dahil"
+                                title="Avantajlı Karma Paketler (Kargo Dahil)">
+                                <h4>Avantajlı Karma Paketler (Kargo Dahil)</h4>
+                                <img src="/img/avantajli-karma-paketler-kargo-dahil.jpeg"
+                                    alt="Avantajlı Karma Paketler (Kargo Dahil)" class="list_img none">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                
+                <div id="banner" class="owl-carousel owl-theme slider" style="opacity: 1; display: block;">
+
+                    <div class="owl-wrapper-outer autoHeight" style="height: 273px;">
+                        <div id="slideshow" class="owl-wrapper" style="width: 400vw; left: 0px; display: block; transform: translate3d(-2620px, 0px, 0px); transition: all 1000ms ease 0s;">
+                            <div class="owl-item">
+                                <div class="item">
+                                    <img src="/img/slide/1.jpg" alt="Taze Yöre">
+                                </div>
+                            </div>
+                            <div class="owl-item">
+                                <div class="item">
+                                    <img src="/img/slide/2.jpg" alt="Taze Yöre">
+                                </div>
+                            </div>
+                            <div class="owl-item">
+                                <div class="item">
+                                    <img src="/img/slide/3.jpg" alt="Taze Yöre">
+                                </div>
+                            </div>
+                            <div class="owl-item">
+                                <div class="item">
+                                    <img src="/img/slide/4.jpg" alt="Taze Yöre">
+                                </div>
+                            </div>
+                            <!-- <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/taze-yore.jpg" alt="Taze Yöre">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/kars-kasari.jpg" alt="Kars Kaşarı">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/ezine-peyniri.jpg" alt="Ezine Peyniri">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/ayvalik-zeytinyagi.jpg" alt="Ayvalık Zeytinyağı">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/halhali-zeytini.jpg" alt="Halhali Zeytini">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/afyon-sucugu.jpg" alt="Afyon Sucuğu">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/datca-bademi.jpg" alt="Datça Bademi">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/kayseri-pastirmasi.jpg" alt="Kayseri Pastırması">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/anzer-bali.jpg" alt="Anzer Balı">
+
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 1310px;">
+                                <div class="item">
+
+                                    <img src="/img/gaziantep-baklavasi.jpg" alt="Gaziantep Baklavası">
+
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!-- <div class="owl-controls clickable">
+                        <div class="owl-pagination">
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page active"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                            <div class="owl-page"><span class=""></span></div>
+                        </div>
+                    </div> -->
+                </div>
+
+
+                <div class="reklam_ust">
+                    <div class="owl-carousel owl-theme slider" style="opacity: 0; display: block;">
+
+                        <div class="owl-wrapper-outer autoHeight" style="height: 0px;">
+                            <div class="owl-wrapper" style="width: 200px; left: 0px; display: block;">
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/neden-taze-yore.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center">
+                                                <div class="bg-transparent">
+                                                    <h4>Neden Taze Yöre?</h4>
+
+                                                    <p>Çünkü, üretildiği yöreden gelen doğal gıda ürünlerini, doğrudan
+                                                        üreticilerinden alarak, sağlıklı bir yaşam sürmeyi siz de hak
+                                                        ediyorsunuz.&nbsp;</p>
+
+                                                    <p><a class="ActionBtn"
+                                                            href="https://www.tazeyore.com/i/neden-taze-yore"
+                                                            target="_blank">Detaylı Bilgi</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-controls clickable" style="display: none;">
+                            <div class="owl-pagination">
+                                <div class="owl-page active"><span class=""></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center">
+                    <ul class="reklam_orta after_clr">
+
+                        <li>
+                            <div class="img_ortala none">
+                                <img src="/img/dogal-ve-saglikli-gida.png" alt="dogal-ve-saglikli-gida.png">
+                            </div>
+
+                            <p>Gıdalarınızı, doğrudan yöresel üreticilerden alın. Hem doğal ve sağlıklı beslenin, hem de
+                                yöresel üreticileri destekleyin.&nbsp;</p>
+
+
+
+                        </li>
+
+                        <li>
+                            <div class="img_ortala none">
+                                <img src="/img/taze-gida.png" alt="taze-gida.png">
+                            </div>
+
+                            <p>Ürünler size, taze ve eksiksiz olarak ulaştıktan sonra, üreticiye ödeme yapılması için
+                                onay verin.</p>
+
+
+
+                        </li>
+
+                        <li>
+                            <div class="img_ortala none">
+                                <img src="/img/kaliteli-urun.png" alt="kaliteli-urun.png">
+                            </div>
+
+                            <p>Almış olduğunuz ürünleri değerlendirerek, kaliteli ürün ve üreticilerin ön plana
+                                çıkmasını sağlayın.</p>
+
+
+
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="reklam_alt">
+                    <div class="owl-carousel owl-theme slider" style="opacity: 0; display: block;">
+
+                        <div class="owl-wrapper-outer autoHeight" style="height: 0px;">
+                            <div class="owl-wrapper" style="width: 1800px; left: 0px; display: block;">
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-3.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn" href="https://www.tazeyore.com/magaza-ac"
+                                                            rel="noopener noreferrer">Ücretsiz Mağaza Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-4.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn" href="https://www.tazeyore.com/magaza-ac"
+                                                            rel="noopener noreferrer">Ücretsiz Mağaza Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-6.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn" href="https://www.tazeyore.com/magaza-ac"
+                                                            rel="noopener noreferrer">Ücretsiz Mağaza Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-1.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn"
+                                                            href="https://www.tazeyore.com/magaza-ac">Ücretsiz Mağaza
+                                                            Açın</a></p>
+
+                                                    <p>&nbsp;</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-2.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn"
+                                                            href="https://www.tazeyore.com/magaza-ac">Ücretsiz Mağaza
+                                                            Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn" href="https://www.tazeyore.com/magaza-ac"
+                                                            rel="noopener noreferrer">Ücretsiz Mağaza Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-7.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn" href="https://www.tazeyore.com/magaza-ac"
+                                                            rel="noopener noreferrer">Ücretsiz Mağaza Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-5.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn" href="https://www.tazeyore.com/magaza-ac"
+                                                            rel="noopener noreferrer">Ücretsiz Mağaza Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 100px;">
+                                    <div class="parallax"
+                                        style="background-image: url(&#39;/uploads/gorsel/yoresel-urunler-mi-uretiyorsunuz-8.jpg&#39;);">
+                                        <div class="middle">
+                                            <div class="center after_clr">
+                                                <div class="bg-transparent">
+                                                    <h4>Yöresel ürünler mi üretiyorsunuz ?</h4>
+
+                                                    <p>Eğer siz de kendi yörenize ait gıda ürünleri üreten bir çiftlik,
+                                                        mandıra, işletme ya da kooperatif iseniz, hemen ücretsiz olarak
+                                                        mağazanızı açın. Ürünlerinizi, tüm Türkiye’ye&nbsp;aracısız
+                                                        satmanın mutluluğunu yaşayın.</p>
+
+                                                    <p><a class="ActionBtn" href="https://www.tazeyore.com/magaza-ac"
+                                                            rel="noopener noreferrer">Ücretsiz Mağaza Açın</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-controls clickable">
+                            <div class="owl-pagination">
+                                <div class="owl-page active"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                                <div class="owl-page"><span class=""></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="centerSharchHeaderDefault uye_girisyap color2">
+
+                    <h6><b>Yeni Eklenen Ürünler </b></h6>
+                </div>
+                <div class="center" style="margin-top: 2rem">
+                    <ul class="urunler v2">
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="/product/index.html"
+                                title="Datça Arı Sütü" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Ozlu-Datca-Yoresel-Urunler-Datca-Ari-Sutu-250-g.jpg"
+                                        alt="Datça Arı Sütü" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Datça Arı Sütü</h3>
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="yoreadi">Muğla</div>
+                                    <div class="urun_kargo">Ertesi Gün Kargoya verilir</div>
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">270,00 ₺ / 250 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4089" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-kakaolu-findik-drajesi-200-g"
+                                title="Kakaolu Fındık Drajesi" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-kakolu-findik-draje-200-g.jpg"
+                                        alt="Kakaolu Fındık Drajesi" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Kakaolu Fındık Drajesi</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">3 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">80,00 ₺ / 200 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4088" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-sutlu-findik-draje-200-g"
+                                title="Sütlü Fındık Drajesi" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-sutlu-findik-draje-200-g.jpg"
+                                        alt="Sütlü Fındık Drajesi" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Sütlü Fındık Drajesi</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">2 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">80,00 ₺ / 200 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4087" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-sutlu-findik-kremasi-400-g"
+                                title="Sütlü Fındık Kreması" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-sutlu-findik-krema-400-g.jpg"
+                                        alt="Sütlü Fındık Kreması" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Sütlü Fındık Kreması</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">2 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">100,00 ₺ / 400 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4086" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-findik-ezmesi-450-g" title="Fındık Ezmesi"
+                                style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-findik-ezmesi-450-g.jpg" alt="Fındık Ezmesi"
+                                        class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Fındık Ezmesi</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">3 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">100,00 ₺ / 450 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4085" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-atom-mix-enerji-deposu-1-kg"
+                                title="Atom Mix Enerji Deposu" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-Atom-Mix-Enerji-Deposu-1-kg.jpg"
+                                        alt="Atom Mix Enerji Deposu" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Atom Mix Enerji Deposu</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">3 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">240,00 ₺ / 1 kg</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4084" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-atom-mix-enerji-deposu-300-g"
+                                title="Atom Mix Enerji Deposu" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-atom-mix-300-g.jpg" alt="Atom Mix Enerji Deposu"
+                                        class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Atom Mix Enerji Deposu</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">3 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">90,00 ₺ / 300 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4083" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-giresun-findik-ezmesi-300-g"
+                                title="Giresun Fındık Ezmesi" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-findik-ezmesi-300-g.jpg" alt="Giresun Fındık Ezmesi"
+                                        class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Giresun Fındık Ezmesi</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">3 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">85,00 ₺ / 300 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4082" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-pikola-findik-500-g" title="Pikola Fındık"
+                                style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-pikola-findik-500-g.jpg" alt="Pikola Fındık"
+                                        class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Pikola Fındık</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">3 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">160,00 ₺ / 500 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4081" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-pikola-findik-250-g" title="Pikola Fındık"
+                                style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-pikola-findik-250-g.jpg" alt="Pikola Fındık"
+                                        class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Pikola Fındık</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">3 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">80,00 ₺ / 250 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4080" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-naturel-giresun-findik-250-g"
+                                title="Naturel Giresun Fındık" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-naturel-findik-250-g.jpg" alt="Naturel Giresun Fındık"
+                                        class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Naturel Giresun Fındık</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">2 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">60,00 ₺ / 250 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4079" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-naturel-giresun-findik-500-g"
+                                title="Naturel Giresun Fındık" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-Naturel-Giresun-Findik-500-g.jpg"
+                                        alt="Naturel Giresun Fındık" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Naturel Giresun Fındık</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">2 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">110,00 ₺ / 500 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4078" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-kavrulmus-giresun-findik-250-g"
+                                title="Kavrulmuş Giresun Fındık" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-kavrulmus-findik-250-kg.jpg"
+                                        alt="Kavrulmuş Giresun Fındık" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Kavrulmuş Giresun Fındık</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">2 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">70,00 ₺ / 250 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4077" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-kavrulmus-giresun-findik-500-g"
+                                title="Kavrulmuş Giresun Fındık" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-kavrulmus-findik-500-g.jpg"
+                                        alt="Kavrulmuş Giresun Fındık" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Kavrulmuş Giresun Fındık</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">2 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">120,00 ₺ / 500 g</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4076" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                        <li class="Main-Border" style="padding: 1rem">
+
+                            <a href="https://www.tazeyore.com/u/turan-findik-sekersiz-giresun-findik-ezmesi-1-kg"
+                                title="Şekersiz Giresun Fındık Ezmesi" style="height: 150px;">
+                                <figure class="zoom_effect">
+
+
+                                    <img src="/img/Turan-Findik-sekersiz-findik-ezmesi-1-kg.jpg"
+                                        alt="Şekersiz Giresun Fındık Ezmesi" class="list_img">
+                                </figure>
+
+                                <div class="urun_bilgi">
+                                    <h3>Şekersiz Giresun Fındık Ezmesi</h3>
+                                    <hr style="margin: 10px 0;">
+
+
+                                    <div class="yoreadi">Giresun</div>
+                                    <div class="urun_kargo">2 Gün İçinde Kargoya verilir</div>
+
+
+
+                                    <hr style="margin: 10px 0;">
+
+                                    <div class="ProductMoney">230,00 ₺ / 1 kg</div>
+
+
+                                </div>
+                            </a>
+                            <div class="Product-Btn-Div">
+
+                                <a class="btn-addcart ActionBtn" data-productid="4075" href="javascript:void(0)">Sepete
+                                    Ekle</a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="text_center"><a href="https://www.tazeyore.com/urunler" class="SecondBtn">Tüm
+                            Ürünler</a></div>
+                </div>
+
+                <div class="center margin_top50">
+                    <div class="abaslik">Blog</div>
+                    <div id="haberduyurular" class="margin_top10 icerik blog-list owl-carousel owl-theme"
+                        style="opacity: 1; display: block;">
+
+                        <div class="owl-wrapper-outer">
+                            <div class="owl-wrapper" style="width: 9360px; left: 0px; display: block;">
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/kars-yoremizin-cografi-Isaretleri-urunlerini-taniyalim"
+                                                title="Kars Yöremizin Coğrafi İşaretleri Ürünlerini Tanıyalım"
+                                                class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/kars-yoremizin-cografi-Isaretleri-urunlerini-taniyalim.jpg"
+                                                        alt="Kars Yöremizin Coğrafi İşaretleri Ürünlerini Tanıyalım"
+                                                        class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Kars Yöremizin Coğrafi İşaretleri Ürünlerini
+                                                        Tanıyalım</h4>
+                                                    <div class="blog-date">10.05.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/sarimsak-ve-limon-sizin-Icin-bulustu"
+                                                title="Sarımsak ve Limon Sizin İçin Buluştu" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/sarimsak-ve-limon-sizin-Icin-bulustu.jpg"
+                                                        alt="Sarımsak ve Limon Sizin İçin Buluştu" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Sarımsak ve Limon Sizin İçin Buluştu</h4>
+                                                    <div class="blog-date">25.04.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/saglikli-atistirmaliklardan-secmeler"
+                                                title="Sağlıklı Atıştırmalıklardan Seçmeler" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/saglikli-atistirmaliklardan-secmeler.jpg"
+                                                        alt="Sağlıklı Atıştırmalıklardan Seçmeler" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Sağlıklı Atıştırmalıklardan Seçmeler</h4>
+                                                    <div class="blog-date">25.04.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/hibiskus-cayi-denediniz-mi"
+                                                title="Hibiskus Çayı Denediniz mi?" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/hibiskus-cayi-denediniz-mi.jpg"
+                                                        alt="Hibiskus Çayı Denediniz mi?" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Hibiskus Çayı Denediniz mi?</h4>
+                                                    <div class="blog-date">25.04.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/bu-cay-strese-birebir"
+                                                title="Bu Çay Strese Birebir" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/bu-cay-strese-birebir.jpg"
+                                                        alt="Bu Çay Strese Birebir" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Bu Çay Strese Birebir</h4>
+                                                    <div class="blog-date">20.04.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/mucizevi-Icecek-salgam-suyu"
+                                                title="Mucizevi İçecek Şalgam Suyu" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/mucizevi-Icecek-salgam-suyu.jpg"
+                                                        alt="Mucizevi İçecek Şalgam Suyu" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Mucizevi İçecek Şalgam Suyu</h4>
+                                                    <div class="blog-date">11.04.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/aclik-otu-cayi-nedir-sagliga-faydalari-nelerdir"
+                                                title="Açlık Otu Çayı Nedir? Sağlığa Faydaları Nelerdir?"
+                                                class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/aclik-otu-cayi-nedir-sagliga-faydalari-nelerdir.jpg"
+                                                        alt="Açlık Otu Çayı Nedir? Sağlığa Faydaları Nelerdir?"
+                                                        class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Açlık Otu Çayı Nedir? Sağlığa Faydaları
+                                                        Nelerdir?</h4>
+                                                    <div class="blog-date">06.04.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/enginar-sezonu-acildi-enginar-cesitleri-ve-enginarin-sagliga-faydalari"
+                                                title="Enginar Sezonu Açıldı! Enginar Çeşitleri ve Enginarın Sağlığa Faydaları"
+                                                class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/enginar-sezonu-acildi-enginar-cesitleri-ve-enginarin-sagliga-faydalari.jpg"
+                                                        alt="Enginar Sezonu Açıldı! Enginar Çeşitleri ve Enginarın Sağlığa Faydaları"
+                                                        class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Enginar Sezonu Açıldı! Enginar Çeşitleri ve
+                                                        Enginarın Sağlığa Faydaları</h4>
+                                                    <div class="blog-date">04.04.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/karadutun-sagliga-faydalari-nelerdir"
+                                                title="Karadutun Sağlığa Faydaları Nelerdir?" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/karadutun-sagliga-faydalari-nelerdir.jpg"
+                                                        alt="Karadutun Sağlığa Faydaları Nelerdir?" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Karadutun Sağlığa Faydaları Nelerdir?</h4>
+                                                    <div class="blog-date">23.01.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/hangi-zeytinyagini-almalisiniz"
+                                                title="Hangi Zeytinyağını Almalısınız?" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/zeytinyagi-ozellikleri-1.jpg"
+                                                        alt="Hangi Zeytinyağını Almalısınız?" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Hangi Zeytinyağını Almalısınız?</h4>
+                                                    <div class="blog-date">17.01.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/yuz-yillik-bir-gelenek-gravyer-peyniri"
+                                                title="Yüz Yıllık Bir Gelenek: Gravyer Peyniri" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/yuz-yillik-bir-gelenek-gravyer-peyniri.jpg"
+                                                        alt="Yüz Yıllık Bir Gelenek: Gravyer Peyniri" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Yüz Yıllık Bir Gelenek: Gravyer Peyniri</h4>
+                                                    <div class="blog-date">16.01.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 390px;">
+                                    <div class="item">
+                                        <div class="card">
+                                            <a href="https://www.tazeyore.com/b/sifa-kaynagi-anzer-bali"
+                                                title="Şifa Kaynağı Anzer Balı" class="td-none">
+                                                <figure class="zoom-effect4">
+                                                    <img src="/img/sifa-kaynagi-anzer-bali.jpg"
+                                                        alt="Şifa Kaynağı Anzer Balı" class="list-img">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Şifa Kaynağı Anzer Balı</h4>
+                                                    <div class="blog-date">12.01.2023</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-controls clickable">
+                            <div class="owl-buttons">
+                                <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                                <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+
+
+
+
+        <footer>
+            <div class="center">
+                <div class="align-items-center d-flex">
+                </div>
+                <div class="fmenu after_clr">
+                    <div class="footer_li">
+                        <h6>Kurumsal</h6>
+                        <ul class="margin_top20">
+                            <li><a href="https://www.tazeyore.com/i/hakkimizda" title="Hakkımızda"
+                                    target="_self">Hakkımızda</a></li>
+                            <li><a href="https://www.tazeyore.com/i/kariyer-firsatlari" title="Kariyer Fırsatları"
+                                    target="_self">Kariyer Fırsatları</a></li>
+                            <li><a href="https://www.tazeyore.com/i/kurumsal-bilgiler" title="Kurumsal Bilgiler"
+                                    target="_self">Kurumsal Bilgiler</a></li>
+                            <li><a href="https://www.tazeyore.com/blog" title="Blog" target="_self">Blog</a></li>
+                            <li><a href="https://www.tazeyore.com/iletisim" title="İletişim" target="_self">İletişim</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_li">
+                        <h6>Müşteriler</h6>
+                        <ul class="margin_top20">
+                            <li><a href="https://www.tazeyore.com/i/sikca-sorulan-sorular" title="Sıkça Sorulan Sorular"
+                                    target="_self">Sıkça Sorulan Sorular</a></li>
+                            <li><a href="https://www.tazeyore.com/i/garantili-odeme-modeli"
+                                    title="Garantili Ödeme Modeli" target="_self">Garantili Ödeme Modeli</a></li>
+                            <li><a href="https://www.tazeyore.com/i/iptal-ve-iade-politikasi"
+                                    title="İptal ve İade Politikası" target="_self">İptal ve İade Politikası</a></li>
+                            <li><a href="https://www.tazeyore.com/i/islem-rehberi" title="İşlem Rehberi"
+                                    target="_self">İşlem Rehberi</a></li>
+                            <li><a href="https://www.tazeyore.com/i/gizlilik-politikasi-ve-kvkk-bildirimi"
+                                    title="Gizlilik Politikası ve KVKK Bildirimi" target="_self">Gizlilik Politikası ve
+                                    KVKK Bildirimi</a></li>
+                            <li><a href="https://www.tazeyore.com/i/kullanici-sozlesmesi" title="Kullanıcı Sözleşmesi"
+                                    target="_self">Kullanıcı Sözleşmesi</a></li>
+                            <li><a href="https://www.tazeyore.com/i/on-bilgilendirme-formu"
+                                    title="Ön Bilgilendirme Formu" target="_self">Ön Bilgilendirme Formu</a></li>
+                            <li><a href="https://www.tazeyore.com/i/mesafeli-satis-sozlesmesi"
+                                    title="Mesafeli Satış Sözleşmesi" target="_self">Mesafeli Satış Sözleşmesi</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_li">
+                        <h6>Üreticiler</h6>
+                        <ul class="margin_top20">
+                            <li><a href="https://www.tazeyore.com/i/taze-yorede-magaza-acmaya-uygun-musunuz"
+                                    title="Taze Yöre" de="" mağaza="" açmaya="" uygun="" musunuz?'=""
+                                    target="_self">Taze Yöre'de Mağaza Açmaya Uygun musunuz?</a></li>
+                            <li><a href="https://www.tazeyore.com/i/neden-taze-yorede-yer-almalisiniz"
+                                    title="Neden Taze Yöre’de Mağaza Açmalısınız?" target="_self">Neden Taze Yöre’de
+                                    Mağaza Açmalısınız?</a></li>
+                            <li><a href="https://www.tazeyore.com/i/uretici-adaylarinin-sikca-sordugu-sorular"
+                                    title="Üretici Adaylarının Sıkça Sorduğu Sorular" target="_self">Üretici Adaylarının
+                                    Sıkça Sorduğu Sorular</a></li>
+                            <li><a href="https://www.tazeyore.com/i/hangi-kategorilerde-satis-yapabilirsiniz"
+                                    title="Hangi Kategorilerde Satış Yapabilirsiniz?" target="_self">Hangi Kategorilerde
+                                    Satış Yapabilirsiniz?</a></li>
+                            <li><a href="https://www.tazeyore.com/i/uretici-degerlendirme-sistemi"
+                                    title="Üretici Değerlendirme Sistemi" target="_self">Üretici Değerlendirme
+                                    Sistemi</a></li>
+                            <li><a href="https://www.tazeyore.com/i/satici-Is-ortakligi-sozlesmesi"
+                                    title="Satıcı İş Ortaklığı Sözleşmesi" target="_self">Satıcı İş Ortaklığı
+                                    Sözleşmesi</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+
+</html>
